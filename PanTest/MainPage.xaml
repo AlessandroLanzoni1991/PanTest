@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
+             x:Class="PanTest.MainPage">
+
+    <Grid>
+
+        <VerticalStackLayout>
+
+            <Label x:Name="safe"
+                   Text="Off"/>
+
+            <Label x:Name="translationX"
+                   Text="Test"/>
+
+            <Label x:Name="translationY"
+                   Text="Test"/>
+
+        </VerticalStackLayout>
+
+        <Border x:Name="border"
+                HeightRequest="150"
+                WidthRequest="150"
+                BackgroundColor="Red">
+            <Border.GestureRecognizers>
+                <PanGestureRecognizer PanUpdated="Panned"/>
+            </Border.GestureRecognizers>
+        </Border>
+
+
+        <VerticalStackLayout VerticalOptions="End"
+                             MaximumWidthRequest="300"
+                             Spacing="8">
+            <Button Text="Reset"
+                    Clicked="ResetPosition"/>
+            <Button Text="Safe On/Off"
+                    Clicked="ChangeMode"/>
+        </VerticalStackLayout>
+
+
+    </Grid>
+
+</ContentPage>
